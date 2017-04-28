@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+  <ion-card>
+    <ion-card-header>
+      Login
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input formControlName="name" type="text" [(ngModel)]="user.name" placeHolder="Usuario"></ion-input>
+      </ion-item>
+      <p 
+      *ngIf="form.get('name').hasError('required') || form.get('name').hasError('minLength')" 
+      color="Danger">El usuario está mal</p>
+
+      <ion-item>
+        <ion-input formControlName="pass" type="password" [(ngModel)]="user.password" placeHolder="Contraseña"></ion-input>
+      </ion-item>
+      <p *ngIf="form.get('name').hasError('required')" color="Danger">Contraseña mal escrita</p>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button round outline (click)="openWindow()">Aceptar</button>
+  </form>
+</ion-content>
