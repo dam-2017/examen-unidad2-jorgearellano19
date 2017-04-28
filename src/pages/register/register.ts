@@ -25,7 +25,8 @@ export class Register {
       nombre:["",Validators.required],
       paterno:["",Validators.required],
       materno:["",Validators.required],
-      date:["",Validators.compose([Validators.required,Validators.pattern('/([0-9]{4})\/([0-9]{2})\/([0-9]{2})$/')])],
+      date:["",Validators.compose([Validators.required])],
+      // Cuando la probé en páginas parjalaba :( Validators.pattern('/([0-9]{4})\/([0-9]{2})\/([0-9]{2})/')
       rfc:[""]
     });
   }
